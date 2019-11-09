@@ -1,19 +1,8 @@
-# Fleet Adapter Tutorial
-This is an attempt at documenting the development of a RMF fleet adapter. We start with a [MiR robot](https://github.com/dfki-ric/mir_robot) in simulation, and document the steps required to integrate this "vendor ready" system with RMF. 
+# Bridging
+This branch will focus on bridging from ROS1 to ROS2. This is necessary because RMF runs on ROS2. Thus the vendor navstack will need to expose certain topics to ROS2. We will use [ros1_bridge](https://github.com/ros2/ros1_bridge) for this purpose. 
 
-We will record the steps of this tutorial as branches. The first branch, `master`, documents the provision of a "vendor ready" system (MiR). Each subsequent branch will record each discrete step required to integrate with RMF in the corresponding branches README.md.
+`sudo apt install ros-dashing-ros1-bridge`
 
-## Setting up the MiR simulation
-The following commands will set up a simulation MiR with amcl navstack, in a maze environment. We can consider that mapping has already been done. Remember to manually unpause the simulation once the stack finishes loading.
+We also restructure the workspace in order to separate the ros1 and ros2 workspaces.
 
-* `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git`
-* `cd fleet-adapter-tutorial && colcon build`
-* `source install/setup.bash`
-* `roslaunch rviz_vendor_setup main.launch`
 
-The MiR receives goal poses by subscribing to geometry_msgs/PoseStamped published to `/move_base_simple/goal`. Instead of clicking in Rviz, we can alternatively publish a PoseStamped message, changing the parameters accordingly:
-```
-rostopic pub /move_base_simple/goaleometry_msgs/PoseStamped '{ header: { frame_id:  "map"}, 
-pose: { position: { x: 17, y: 10 }, 
-orientation: { x: 0, y: 0, z: 0, w: 1 } } }'
-```
