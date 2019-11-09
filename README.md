@@ -5,6 +5,10 @@ This branch will focus on bridging from ROS1 to ROS2. This is necessary because 
 
 We also restructure the workspace in order to separate the ros1 and ros2 workspaces.
 
+The important topics are identified as:
+* `/move_base_simple/goal`: The fleet manager will instruct the robot on target destinations by publishing `geometry/PoseStamped` messages on this topic.
+* `move_base_node/SBPLLatticePlanner/plan` : The robot navstack will publish a `nav_msgs/Path` message which describes the path to take, which the fleet manager will translate for the RMF scheduler.
+
 
 ## Testing the ROS Bridge
 * In one terminal: `cd ros1 && source install/setup.bash && roslaunch mir_vendor_setup main.launch` to run the MiR simulation from master branch. **Remember** to start the physics in the simulation after everything is online.
