@@ -6,3 +6,16 @@ This branch will focus on bridging from ROS1 to ROS2. This is necessary because 
 We also restructure the workspace in order to separate the ros1 and ros2 workspaces.
 
 
+## Testing the ROS Bridge
+* In one terminal: `cd ros1 && source install/setup.bash && roslaunch mir_vendor_setup main.launch` to run the MiR simulation from master branch. **Remember** to start the physics in the simulation after everything is online.
+* In another terminal, after sourcing ROS1 and then ROS2: `cd ros2 && source install/setup.bash && ros2 run ros1_bridge dynamic_bridge` to run the bridging node.
+* From yet another ROS2 terminal, publish a nav goal as a ROS2 PoseStamped message:
+```
+ros2 topic pub /move_base_simple/goal geotry_msgs/PoseStamped '
+{header: {stamp: {sec: 0, nanosec: 0}, frame_id: "map"}, 
+pose: {position: {x: 17.0, y: 10.0, z: 0.0}, 
+orientation: {w: 1.0}}}'
+```
+
+The gazebo simulation should receive the nav goals as if it was published in ROS1.
+
