@@ -1,0 +1,3 @@
+[submodule "src/mir_robot"]
+	path = src/mir_robot
+	url = https://github.com/dfki-ric/mir_robot.git
