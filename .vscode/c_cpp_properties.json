@@ -11,7 +11,8 @@
                 "/home/bhan/dev/fleet-adapter-tutorial/install/mir_dwb_critics/include/**",
                 "/home/bhan/dev/fleet-adapter-tutorial/install/mir_actions/include/**",
                 "/opt/ros/melodic/include/**",
-                "/usr/include/**"
+                "/usr/include/**",
+                "/opt/ros/dashing/include/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
