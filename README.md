@@ -13,7 +13,7 @@ The following commands will set up a simulation MiR with amcl navstack, in a maz
 
 The MiR receives goal poses by subscribing to geometry_msgs/PoseStamped published to `/move_base_simple/goal`. Instead of clicking in Rviz, we can alternatively publish a PoseStamped message, changing the parameters accordingly:
 ```
-rostopic pub /move_base_simple/goaleometry_msgs/PoseStamped '{ header: { frame_id:  "map"}, 
+rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped '{ header: { frame_id:  "map"}, 
 pose: { position: { x: 17, y: 10 }, 
 orientation: { x: 0, y: 0, z: 0, w: 1 } } }'
 ```
