@@ -7,13 +7,16 @@ We also restructure the workspace in order to separate the ros1 and ros2 workspa
 
 The important topics are identified as:
 * `/move_base_simple/goal`: The fleet manager will instruct the robot on target destinations by publishing `geometry/PoseStamped` messages on this topic.
-* `move_base_node/SBPLLatticePlanner/plan` : The robot navstack will publish a `nav_msgs/Path` message which describes the path to take, which the fleet manager will translate for the RMF scheduler.
+* `/move_base_node/SBPLLatticePlanner/plan` : The robot navstack will publish a `nav_msgs/Path` message which describes the path to take, which the fleet manager will translate for the RMF scheduler.
 
 
 ## Testing the ROS Bridge
-* In one terminal: `cd ros1 && source install/setup.bash && roslaunch mir_vendor_setup main.launch` to run the MiR simulation from master branch. **Remember** to start the physics in the simulation after everything is online.
-* In another terminal, after sourcing ROS1 and then ROS2: `cd ros2 && source install/setup.bash && ros2 run ros1_bridge dynamic_bridge` to run the bridging node.
-* From yet another ROS2 terminal, publish a nav goal as a ROS2 PoseStamped message:
+In the following, a ROS1 terminal is a terminal sourced with ROS1 and sourced with the corresponding `ros1` workspace in the tutorial, vice versa for ROS2.
+
+* In one ROS1 terminal (1): `roslaunch mir_vendor_setup main.launch` to run the MiR simulation from master branch. **Remember** to start the physics in the simulation after everything is online.
+* In a ROS1 & ROS2 terminal (2): `ros2 run ros1_bridge dynamic_bridge` to run the bridging node.
+* From a ROS2 terminal (3), run the node that will listen for `/move_base_node/SBPLLatticePlanner/plan` messages over the bridge: `rosrun fleet_ros2_bridge bridge_node`.
+* From another ROS2 terminal (4), publish a nav goal as a ROS2 PoseStamped message:
 ```
 ros2 topic pub /move_base_simple/goal geotry_msgs/PoseStamped '
 {header: {stamp: {sec: 0, nanosec: 0}, frame_id: "map"}, 
@@ -21,5 +24,5 @@ pose: {position: {x: 17.0, y: 10.0, z: 0.0},
 orientation: {w: 1.0}}}'
 ```
 
-The gazebo simulation should receive the nav goals as if it was published in ROS1.
+The gazebo simulation should receive the ROS2 nav goals as if it was published in ROS1. Additionally, we should see the ROS1 plan messages as if it was published in ROS2.
 

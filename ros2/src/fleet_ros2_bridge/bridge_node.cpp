@@ -15,7 +15,8 @@
 #include <memory>
 
 #include "rclcpp/rclcpp.hpp"
-#include "geometry_msgs/msg/pose_stamped.hpp"
+#include "nav_msgs/msg/path.hpp"
+
 using std::placeholders::_1;
 
 class MinimalSubscriber : public rclcpp::Node
@@ -24,16 +25,16 @@ public:
   MinimalSubscriber()
   : Node("bridge_node")
   {
-    subscription_ = this->create_subscription<geometry_msgs::msg::PoseStamped>(
-      "/move_base_simple/goal", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+    subscription_ = this->create_subscription<nav_msgs::msg::Path>(
+      "/move_base_node/SBPLLatticePlanner/plan", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
   }
 
 private:
-  void topic_callback(const geometry_msgs::msg::PoseStamped::SharedPtr msg) const
+  void topic_callback(const nav_msgs::msg::Path::SharedPtr msg) const
   {
     RCLCPP_INFO(this->get_logger(), "I heard something!");
   }
-  rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr subscription_;
+  rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr subscription_;
 };
 
 int main(int argc, char * argv[])
