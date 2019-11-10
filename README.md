@@ -9,7 +9,7 @@ The following commands will set up a simulation MiR with amcl navstack, in a maz
 * `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git`
 * `cd fleet-adapter-tutorial && colcon build`
 * `source install/setup.bash`
-* `roslaunch rviz_vendor_setup main.launch`
+* `roslaunch mir_vendor_setup main.launch`
 
 The MiR receives goal poses by subscribing to geometry_msgs/PoseStamped published to `/move_base_simple/goal`. Instead of clicking in Rviz, we can alternatively publish a PoseStamped message, changing the parameters accordingly:
 ```
