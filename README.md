@@ -14,8 +14,7 @@ This should be sufficient to build the `traffic-editor` locally in the `external
 
 ## Running traffic-editor
 The following steps may be necessary until `traffic-editor` is more developed.
-* `cd external/src/traffic-editor`. We need to run the executable from the `traffic-editor` source folder.
-* `../../build/src/traffic-editor/traffic-editor`. Run the executable.
+* `external/build/src/traffic-editor/traffic-editor`. Run the executable from the root folder
 * Select file -> Open Project, and select `maze.yaml` from `maps/maze-new` or `maps/maze-complete`.
 
 **Important** to note that the executable should be run from `traffic-editor` source folder, and the path specified in `maze.yaml` must point correctly to `maze.png` relative to the `traffic-editor` source folder.
