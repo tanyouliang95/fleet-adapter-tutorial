@@ -1,6 +1,16 @@
-building_name: maze
 levels:
   L1:
+    measurements:
+      - [0, 1, {distance: [3, 20]}]
+      - [1, 2, {distance: [3, 20]}]
+      - [2, 3, {distance: [3, 20]}]
+      - [0, 3, {distance: [3, 20]}]
     drawing:
-      filename: ../../../maps/maze-complete/maze.png
-      offset: [0, 0]
+      filename: ../../../maps/maze-new/maze.png
+    elevation: 0
+    vertices:
+      - [0, 400, 0, ""]
+      - [0, 0, 0, ""]
+      - [400, 0, 0, ""]
+      - [400, 400, 0, ""]
+building_name: maze
