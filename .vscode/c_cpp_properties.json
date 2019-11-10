@@ -12,7 +12,9 @@
                 "/home/bhan/dev/fleet-adapter-tutorial/install/mir_actions/include/**",
                 "/opt/ros/melodic/include/**",
                 "/usr/include/**",
-                "/opt/ros/dashing/include/**"
+                "/opt/ros/dashing/include/**",
+                "${workspaceFolder}/ros2/src/rmf_core/rmf_traffic/include",
+                "${workspaceFolder}/ros2/src/rmf_map_to_graph/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

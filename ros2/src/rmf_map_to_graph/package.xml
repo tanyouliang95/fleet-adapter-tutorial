@@ -12,10 +12,12 @@
 
   <build_depend>rclcpp</build_depend>
   <build_depend>rmf_traffic</build_depend>
+  <build_depend>rmf_utils</build_depend>
   <build_depend>yaml-cpp</build_depend>
 
   <exec_depend>rclcpp</exec_depend>
   <exec_depend>rmf_traffic</exec_depend>
+  <exec_depend>rmf_utils</exec_depend>
   <exec_depend>yaml-cpp</exec_depend>
 
   <export>
