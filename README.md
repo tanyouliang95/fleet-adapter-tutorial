@@ -16,9 +16,9 @@ This should be sufficient to build the `rmf-editor` locally in the `external` fo
 The following steps may be necessary until `rmf-editor` is more developed.
 * `cd external/src/rmf-editor`. We need to run the executable from the `rmf-editor` source folder.
 * `../../build/src/rmf-editor/rmf-editor`. Run the executable.
-* Select file -> Open Project, and select `maze.yaml` from `external/src/waypoint-mapping-new` or `external/src/waypoint-mapping-complete`.
+* Select file -> Open Project, and select `maze.yaml` from `maps/maze-new` or `maps/maze-complete`.
 
-**Important** to note that the executable should be run from `rmf-editor` source folder, and the path specified in `maze.yaml` must point correctly to `maze.png`.
+**Important** to note that the executable should be run from `rmf-editor` source folder, and the path specified in `maze.yaml` must point correctly to `maze.png` relative to the `rmf-editor` source folder.
 
 ## Introduction
 The `rmf-editor`is a top-down editor that allows the annotation of maps. There are two functions of the editor. The first function is to specify the "traffic lanes", which are shared amongst all fleets operating in this area. The second function is to allow the automatic generation of a gazebo world by transforming annotations into their corresponding (3D) gazebo counterparts. This is useful when we do not have a gazebo world of the are, but we have a 2D planar map.
