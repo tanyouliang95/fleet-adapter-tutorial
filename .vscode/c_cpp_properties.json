@@ -14,7 +14,8 @@
                 "/usr/include/**",
                 "/opt/ros/dashing/include/**",
                 "${workspaceFolder}/ros2/src/rmf_core/rmf_traffic/include",
-                "${workspaceFolder}/ros2/src/rmf_map_to_graph/include"
+                "${workspaceFolder}/ros2/src/rmf_map_to_graph/include",
+                "${workspaceFolder}/ros2/src/rmf_core/rmf_utils/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
