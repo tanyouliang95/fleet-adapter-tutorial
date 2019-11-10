@@ -6,8 +6,8 @@ This branch will focus on bridging from ROS1 to ROS2. This is necessary because 
 We also restructure the workspace in order to separate the ros1 and ros2 workspaces.
 
 The important topics are identified as:
-* `/move_base_simple/goal`: The fleet manager will instruct the robot on target destinations by publishing `geometry/PoseStamped` messages on this topic.
-* `/move_base_node/SBPLLatticePlanner/plan` : The robot navstack will publish a `nav_msgs/Path` message which describes the path to take, which the fleet manager will translate for the RMF scheduler.
+* `/move_base_simple/goal`: The high level systems in ROS2 will instruct the robot on target destinations by publishing `geometry/PoseStamped` messages on this topic.
+* `/move_base_node/SBPLLatticePlanner/plan` : The lower level robot navstack in ROS1 will publish a `nav_msgs/Path` message which describes the path it will take. This information can be used by the high lvel systems for the RMF scheduler.
 
 
 ## Testing the ROS Bridge
