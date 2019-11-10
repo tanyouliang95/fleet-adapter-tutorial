@@ -20,6 +20,8 @@ find_package(yaml-cpp REQUIRED)
 
 add_executable(load_graph src/load_graph.cpp)
 
+# add_library(load_graph src/load_graph.cpp)
+
 target_include_directories(load_graph PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>  
