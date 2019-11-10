@@ -5,12 +5,28 @@ levels:
       - [1, 2, {distance: [3, 20]}]
       - [2, 3, {distance: [3, 20]}]
       - [0, 3, {distance: [3, 20]}]
+    lanes:
+      - [8, 7, {bidirectional: [4, true], graph_idx: [2, 0], orientation: [1, ""]}]
+      - [7, 6, {bidirectional: [4, true], graph_idx: [2, 0], orientation: [1, ""]}]
+      - [6, 9, {graph_idx: [2, 0], orientation: [1, ""], bidirectional: [4, true]}]
+      - [9, 10, {bidirectional: [4, true], orientation: [1, ""], graph_idx: [2, 0]}]
+      - [10, 11, {bidirectional: [4, true], graph_idx: [2, 0], orientation: [1, ""]}]
+      - [5, 6, {bidirectional: [4, true], graph_idx: [2, 0], orientation: [1, ""]}]
+      - [5, 4, {orientation: [1, ""], bidirectional: [4, true], graph_idx: [2, 0]}]
     drawing:
       filename: ../../../maps/maze-new/maze.png
     elevation: 0
     vertices:
-      - [0, 400, 0, ""]
-      - [0, 0, 0, ""]
-      - [400, 0, 0, ""]
-      - [400, 400, 0, ""]
+      - [0, 400, 0, bottom_left]
+      - [0, 0, 0, top_left]
+      - [400, 0, 0, top_right]
+      - [400, 400, 0, bottom_right]
+      - [50, 268, 0, B]
+      - [50, 190, 0, C]
+      - [330, 190, 0, G]
+      - [330, 360, 0, H]
+      - [50, 360, 0, A]
+      - [330, 20, 0, F]
+      - [50, 20, 0, E]
+      - [50, 130, 0, D]
 building_name: maze
