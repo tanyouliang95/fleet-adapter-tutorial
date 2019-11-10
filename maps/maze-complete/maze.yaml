@@ -6,7 +6,7 @@ levels:
       - [2, 3, {distance: [3, 20]}]
       - [0, 3, {distance: [3, 20]}]
     lanes:
-      - [8, 7, {bidirectional: [4, true], graph_idx: [2, 0], orientation: [1, ""]}]
+      - [8, 7, {bidirectional: [4, false], graph_idx: [2, 0], orientation: [1, ""]}]
       - [7, 6, {bidirectional: [4, true], graph_idx: [2, 0], orientation: [1, ""]}]
       - [6, 9, {graph_idx: [2, 0], orientation: [1, ""], bidirectional: [4, true]}]
       - [9, 10, {bidirectional: [4, true], orientation: [1, ""], graph_idx: [2, 0]}]

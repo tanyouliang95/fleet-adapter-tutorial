@@ -6,7 +6,7 @@
 
 namespace rmf_map_to_graph {
 
-rmf_traffic::agv::Graph load(std::string path);
+rmf_traffic::agv::Graph load(std::string test_map_name, std::string path);
 
 } // namespace rmf_map_to_graph
 
