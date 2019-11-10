@@ -6,7 +6,7 @@ Note that this step is done once per "area of operation", regardless of the numb
 ## Initialization
 * `sudo apt update`
 * `sudo apt install git cmake libyaml-cpp-dev qt5-default`
-* `cd external/src && mkdir build`
+* `cd external/src && mkdir build && cd build`
 * `cmake ..`
 * `make -j4`
 
