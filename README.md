@@ -3,11 +3,7 @@ This is an attempt at documenting the development of a RMF fleet adapter. We sta
 
 We will record the steps of this tutorial as branches. The first branch, `master`, documents the provision of a "vendor ready" system (MiR). Each subsequent branch will record each discrete step required to integrate with RMF in the corresponding branches README.md.
 
-To change between branches, do the following:
-* `git checkout [branch]`
-* `git reset --hard`
-* `git clean -f -f -d`
-* `git submodule update --init` 
+To change between branches, it is best to delete `fleet-adapter-tutorial` and run `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b [branch] && git submodule update --init`, in order to present dangling untracked files.
 
 ## Setting up the MiR simulation
 The following commands will set up a simulation MiR with amcl navstack, in a maze environment. We can consider that mapping has already been done. Remember to manually unpause the simulation once the stack finishes loading.
