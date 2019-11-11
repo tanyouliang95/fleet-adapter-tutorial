@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(rmf_traffic_ros2_schedule)
+project(rmf_traffic_schedule)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -19,16 +19,16 @@ find_package(rmf_traffic_msgs REQUIRED)
 
 include(GNUInstallDirs)
 
-add_library(rmf_traffic_ros2_schedule SHARED src/ScheduleNode.cpp)
+add_library(rmf_traffic_schedule SHARED src/ScheduleNode.cpp)
 
-target_link_libraries(rmf_traffic_ros2_schedule
+target_link_libraries(rmf_traffic_schedule
   PUBLIC
     rmf_traffic::rmf_traffic
     ${rmf_traffic_msgs_LIBRARIES}
     ${rclcpp_LIBRARIES}
 )
 
-target_include_directories(rmf_traffic_ros2_schedule
+target_include_directories(rmf_traffic_schedule
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
@@ -42,8 +42,8 @@ install(
 )
 
 install(
-  TARGETS rmf_traffic_ros2_schedule
-  EXPORT  rmf_traffic_ros2_schedule
+  TARGETS rmf_traffic_schedule
+  EXPORT  rmf_traffic_schedule
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}

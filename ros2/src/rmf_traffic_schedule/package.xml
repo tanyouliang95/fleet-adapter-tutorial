@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
-  <name>rmf_traffic_ros2_schedule</name>
+  <name>rmf_traffic_schedule</name>
   <version>0.0.0</version>
   <description>Implementation of the RMF schedule in ROS2</description>
   <maintainer email="cnboonhan94@gmail.com">Charayaphan Nakorn Boon Han</maintainer>
