@@ -1,4 +1,6 @@
 # Waypoint Mapping
+`git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b 02-Waypoint-Mapping`
+
 We initially assume that the vendor setup comes with a complete navigation stack. This includes a navigation map. We can find the map for this example in `ros1/src/mir_robot/mir_gazebo/maps/maze.png`. The next step would be to annotate this map with waypoints and lanes, which represent the "traffic roads" on which our robot(s) will operate. 
 
 Note that this step is done once per "area of operation", regardless of the number of fleets operating. ( IE O(1) with respect to n fleet adapters ). We will use [traffic-editor](https://github.com/osrf/traffic-editor.git) for this job. We also refactor the directory space for external modules, which are not ROS packages, by adding the `external` folder.
@@ -6,7 +8,7 @@ Note that this step is done once per "area of operation", regardless of the numb
 ## Building traffic-editor
 * `sudo apt update`
 * `sudo apt install git cmake libyaml-cpp-dev qt5-default`
-* `cd external/src && mkdir build && cd build`
+* `cd external && mkdir build && cd build`
 * `cmake ..`
 * `make -j4`
 
@@ -14,6 +16,7 @@ This should be sufficient to build the `traffic-editor` locally in the `external
 
 ## Running traffic-editor
 The following steps may be necessary until `traffic-editor` is more developed.
+* `cd` to root folder
 * `external/build/src/traffic-editor/traffic-editor`. Run the executable from the root folder
 * Select file -> Open Project, and select `maze.yaml` from `maps/maze-new` or `maps/maze-complete`.
 
@@ -45,4 +48,4 @@ We can use `select` and click on vertices, and change their `name` property. In 
 Use `add vertex` to add more vertices within the map boundaries. Then use `add lane` and drag between two adjacent vertices to add a "road" between them.  Use `select` on each lane and set the `bidirectional` property as "true" if this lane should be so. In `maze`, all lanes are bidirectional. Also set the `name` property to a unique identifier. In `maze`, our convention is to label the bottom left as "A", and then continue in alphabetical order clockwise from "A".
 
 ## Output
-The result of all this should be a populated `maze.yaml` file, different from the file in `mir_gazebo`. This file will be used in RMF to create graphs for high level planning. This is in contrast with the low level planning of the robot's navstack.
+The result of all this should be a populated `maze.yaml` file. This is different from the file in `mir_gazebo`. This file will be used to create RMF Graphs.
