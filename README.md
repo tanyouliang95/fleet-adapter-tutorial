@@ -12,7 +12,14 @@ To change between branches, do the following:
 ## Setting up the MiR simulation
 The following commands will set up a simulation MiR with amcl navstack, in a maze environment. We can consider that mapping has already been done. Remember to manually unpause the simulation once the stack finishes loading.
 
-* `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b master` 
+* `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b master`
+  * Do the following just once to install dependencies:
+  * `cd fleet-adapter-tutorial/src/mir_robot`
+  * `sudo apt-get update`
+  * `sudo apt-get install -y python-rosdep`
+  * `sudo rosdep init`
+  * `rosdep update`
+  * `rosdep install --from-paths ./ -i -y --rosdistro melodic`
 * `cd fleet-adapter-tutorial && colcon build`
 * `source install/setup.bash`
 * `roslaunch mir_vendor_setup main.launch`
