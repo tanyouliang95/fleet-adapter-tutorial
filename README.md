@@ -6,11 +6,12 @@ All data is stored in the `maze.yaml` file. In particular, the information under
 
 Note that this is a high level path planning. For actual robot movement between two nodes in terms motor controls such as `cmd_vel`, we should expect that the robots own navstack will handle it.
 
-## Testing the Parser
-**Temp** build only `rmf_map_to_graph`, as `rmf_core` is still in development and we do not have `rmf_msgs` package: 
+## Building the Parser
+**Temp** build only `rmf_map_to_graph`, as `rmf_core` is still in development and we do not have `rmf_msgs` package. From `ros2`:
 * `colcon build --packages-up-to rmf_map_to_graph`
 * `source install/setup,bash`
 
+## Testing the Parser
 Now, we can run an executable, which demonstrates the parsing of YAML and prints out the relevant information on the terminal:
 * `ros2/install/rmf_map_to_graph/bin/load_graph`
 
