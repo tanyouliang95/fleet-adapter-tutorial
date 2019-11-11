@@ -1,4 +1,6 @@
 # Bridging
+`git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b 01-Bridging`
+
 This branch will focus on bridging from ROS1 to ROS2. This is necessary because RMF runs on ROS2. Thus the vendor navstack will need to expose certain topics to ROS2. We will use [ros1_bridge](https://github.com/ros2/ros1_bridge) for this purpose. 
 
 `sudo apt install ros-dashing-ros1-bridge`
@@ -17,7 +19,7 @@ In the following, a ROS1 terminal is a terminal sourced with ROS1 and sourced wi
 
 * In one ROS1 terminal (1): `roslaunch mir_vendor_setup main.launch` to run the MiR simulation from master branch. **Remember** to start the physics in the simulation after everything is online.
 * In a ROS1 & ROS2 terminal (2): `ros2 run ros1_bridge dynamic_bridge` to run the bridging node.
-* From a ROS2 terminal (3), run the node that will listen for `/move_base_node/SBPLLatticePlanner/plan` messages over the bridge: `rosrun fleet_ros2_bridge bridge_node`.
+* From a ROS2 terminal (3), run the node that will listen for `/move_base_node/SBPLLatticePlanner/plan` messages over the bridge: `ros2 run fleet_ros2_bridge bridge_node`.
 * From another ROS2 terminal (4), publish a nav goal as a ROS2 PoseStamped message:
 ```
 ros2 topic pub /move_base_simple/goal geotry_msgs/PoseStamped '
