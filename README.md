@@ -30,7 +30,7 @@ Now run `ros2 service list`. You will see the following services:
 ```
 
 ## Understanding the Schedule Node
-Recall that the Schedule captures information about other fleets in the environment as a Database of Trajectories. Also recall that there are Mirrors, which act as local copies of the main Schedule's Database. Now, lets analyse the above services and topics.
+Recall that the Schedule captures information about other fleets in the environment as a Database of Trajectories. Also recall that there are Mirrors, which act as local copies of the main Schedule's Database for each of the fleet adapters. Now, lets analyse the above services and topics.
 
 ### /rmf_traffic/mirror_wakeup
 This is the only topic publishing [MirrorWakeup.msg](https://github.com/osrf/rmf_core/blob/traffic_msgs/rmf_traffic_msgs/msg/MirrorWakeup.msg). The Schedule will periodically publish MirrorWakeup.msg to downstream Mirrors, which will then trigger a `mirror_update` service.
