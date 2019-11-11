@@ -9,6 +9,8 @@ The important topics are identified as:
 * `/move_base_simple/goal`: The high level systems in ROS2 will instruct the robot on target destinations by publishing `geometry/PoseStamped` messages on this topic.
 * `/move_base_node/SBPLLatticePlanner/plan` : The lower level robot navstack in ROS1 will publish a `nav_msgs/Path` message which describes the path it will take. This information can be used by the high lvel systems for the RMF scheduler.
 
+## Building
+`cd` into each of `ros1` and `ros2` and do a `colcon build`, sourcing the respective ROS environments.
 
 ## Testing the ROS Bridge
 In the following, a ROS1 terminal is a terminal sourced with ROS1 and sourced with the corresponding `ros1` workspace in the tutorial, vice versa for ROS2.
