@@ -49,4 +49,31 @@ install(
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
+file(GLOB_RECURSE run_schedule_srcs "src/rmf_traffic_ros2/*.cpp")
+add_executable(run_schedule src/run_schedule.cpp src/ScheduleNode.cpp ${run_schedule_srcs})
+
+target_link_libraries(run_schedule
+  PUBLIC
+    rmf_traffic::rmf_traffic
+    ${rmf_traffic_msgs_LIBRARIES}
+    ${rclcpp_LIBRARIES}
+)
+
+target_include_directories(run_schedule
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+    ${rclcpp_INCLUDE_DIRS}
+    ${rmf_traffic_msgs_INCLUDE_DIRS}
+)
+
+install(
+  TARGETS run_schedule
+  EXPORT  run_schedule
+  # RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  RUNTIME DESTINATION lib/${PROJECT_NAME} # for ros2 run
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
 ament_package()
