@@ -16,7 +16,8 @@
                 "${workspaceFolder}/ros2/src/rmf_core/rmf_traffic/include",
                 "${workspaceFolder}/ros2/src/rmf_map_to_graph/include",
                 "${workspaceFolder}/ros2/src/rmf_core/rmf_utils/include",
-                "${workspaceFolder}/ros2/src/rmf_core/rmf_traffic/include"
+                "${workspaceFolder}/ros2/src/rmf_core/rmf_traffic/include",
+                "${workspaceFolder}/ros2/install/rmf_traffic_msgs/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
