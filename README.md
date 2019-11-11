@@ -1,4 +1,4 @@
-# Schedule
+# RMF_Core Overview
 Until now, we have focused on extending the vendor fleet. Our ultimate aim is to generate **feasible trajectory solutions considering the operations of all other RMF fleets.** Our current setup can only generate feasible trajectories given the vendor fleet is the only fleet in operation. We take the following steps to achieve our goals:
 * Relate the vendor fleet map to a RMF Graph, a high level abstraction of the traffic lanes ( Done in 03-Parse-Yaml-to-Graph )
 * Relate the vendor fleet movements to an RMF Trajectory, a high level abstraction of fleet motion.
