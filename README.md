@@ -7,6 +7,7 @@ To change between branches, do the following:
 * `git checkout [branch]`
 * `git reset --hard`
 * `git clean -f -f -d`
+* `git submodule update --init` 
 
 ## Setting up the MiR simulation
 The following commands will set up a simulation MiR with amcl navstack, in a maze environment. We can consider that mapping has already been done. Remember to manually unpause the simulation once the stack finishes loading.
