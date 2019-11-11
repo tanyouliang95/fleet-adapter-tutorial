@@ -7,21 +7,22 @@ We will record the steps of this tutorial as branches. The first branch, `master
 It is best to delete `fleet-adapter-tutorial` and run `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b [branch]`, in order to present dangling untracked files.
 
 ## Setting up the MiR simulation
-The following commands will set up a simulation MiR with amcl navstack, in a maze environment. We can consider that mapping has already been done. Remember to manually unpause the simulation once the stack finishes loading.
+The following commands will set up a simulation MiR with navstack, in a maze environment. We can consider that mapping has already been done. Remember to manually unpause the simulation once the stack finishes loading.
 
 * `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b master`
   * Do the following just once to install dependencies:
-  * `cd fleet-adapter-tutorial/src/mir_robot`
+  * `cd src/mir_robot`
   * `sudo apt-get update`
   * `sudo apt-get install -y python-rosdep`
   * `sudo rosdep init`
   * `rosdep update`
   * `rosdep install --from-paths ./ -i -y --rosdistro melodic`
-* `cd fleet-adapter-tutorial && colcon build`
+* `cd ../.. && colcon build`
 * `source install/setup.bash`
 * `roslaunch mir_vendor_setup main.launch`
+* Unpause the physics simulation in Gazebo ( press the play button )
 
-The MiR receives goal poses by subscribing to geometry_msgs/PoseStamped published to `/move_base_simple/goal`. Instead of clicking in Rviz, we can alternatively publish a PoseStamped message, changing the parameters accordingly:
+The MiR receives goal poses by subscribing to geometry_msgs/PoseStamped published to `/move_base_simple/goal`. Instead of clicking in Rviz, we can alternatively publish a PoseStamped message, such as the one below:
 ```
 rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped '{ header: { frame_id:  "map"}, 
 pose: { position: { x: 17, y: 10 }, 
