@@ -1,6 +1,10 @@
 # Bridging
 `git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b 01-Bridging`
 
+This chapter will focus on the fleet manager. The role of the fleet manager is to process high level commands, into low level actions that can be carried out by the robot. In some cases, certain vendors will already have written fleet managers for their systems. In our example, we build a simple one. Recall that our MiR takes in `geometry_msgs/PoseStamped` messages as nav goals. The role of our fleet manager is to manage the delivery, modification and cancellation of such commands, especially in the case of multiple message submissions. In particular, the fleet manager will also expose an interface to ROS2 via bridging in order to communicate with the fleet adapters.
+
+## Building the Fleet Manager
+<!-- 
 This branch will focus on bridging from ROS1 to ROS2. This is necessary because RMF runs on ROS2. Thus the vendor navstack will need to expose certain topics to ROS2. We will use [ros1_bridge](https://github.com/ros2/ros1_bridge) for this purpose. 
 
 `sudo apt install ros-dashing-ros1-bridge`
@@ -29,4 +33,4 @@ orientation: {w: 1.0}}}'
 ```
 
 The gazebo simulation should receive the ROS2 nav goals as if it was published in ROS1. Additionally, we should see the ROS1 plan messages as if it was published in ROS2.
-
+ -->
