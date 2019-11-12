@@ -4,8 +4,8 @@
 This chapter will focus on the fleet manager. The role of the fleet manager is to process high level commands, into low level actions that can be carried out by the robot. In some cases, certain vendors will already have written fleet managers for their systems. In our example, this is not the case, so we build a simple one. Recall that our MiR takes in `geometry_msgs/PoseStamped` messages as nav goals. The role of our fleet manager is to manage the delivery, modification and cancellation of such commands, especially in the case of multiple message submissions. In particular, the fleet manager will also expose an interface to ROS2 via bridging in order to communicate with the fleet adapters.
 
 ## Building the Fleet Manager
-*`cd ros1`
-*`colcon build`
+* `cd ros1`
+* `colcon build`
 
 ## Running the Fleet Manager
 `roslaunch mir_fleet_manager fleet_manager.launch`
@@ -32,10 +32,11 @@ In the following, a ROS1 terminal is a terminal sourced with ROS1 and sourced wi
 * In a ROS1 & ROS2 terminal (2): `ros2 run ros1_bridge dynamic_bridge` to run the bridging node.
 * From another ROS2 terminal (3), publish a nav goal as a ROS2 PoseStamped message:
 ```
-ros2 topic pub /mir_fleet_manager/waypoint_goal geometry_msgs/PoseStamped '
+ros2 topic pub -r 10 /mir_fleet_manager/waypoint_goal geometry_msgs/PoseStamped '
 {header: {stamp: {sec: 0, nanosec: 0}, frame_id: "map"}, 
 pose: {position: {x: 17.0, y: 10.0, z: 0.0}, 
 orientation: {w: 1.0}}}'
 ```
+**This is not working perfectly fine yet, to debug with experts!**
 
 The fleet manager simulation should receive the ROS2 nav goals as if it was published in ROS1. 
