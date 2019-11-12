@@ -4,10 +4,10 @@
   <description>
       The follow_waypoints node will listen for waypoints given as
       poses and when instructed will follow them one by one by publishing goals
-      to move_base.
+      to move_base. Heavily inspired by the follow_waypoints package.
   </description>
-  <maintainer email="danielsnider12@gmail.com">Daniel Snider</maintainer>
-  <author email="danielsnider12@gmail.com">Daniel Snider</author>
+  <maintainer email="cnboonhan94@gmail.com">Charayaphan Nakorn Boon Han</maintainer>
+  <author email="cnboonhan94@gmail.com">Charayaphan Nakorn Boon Han</author>
   <license>Unlicense</license>
 
   <buildtool_depend>catkin</buildtool_depend>
@@ -15,11 +15,13 @@
   <build_depend>geometry_msgs</build_depend>
   <build_depend>move_base_msgs</build_depend>
   <build_depend>rospy</build_depend>
+  <build_depend>mir_navigation</build_depend>
   <build_depend>std_msgs</build_depend>
   <run_depend>actionlib</run_depend>
   <run_depend>geometry_msgs</run_depend>
   <run_depend>move_base_msgs</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>std_msgs</run_depend>
+  <run_depend>mir_navigation</run_depend>
 
 </package>

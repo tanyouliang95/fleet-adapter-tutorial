@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   move_base_msgs
   rospy
   std_msgs
+  mir_navigation
 )
 
 catkin_python_setup()
@@ -27,3 +28,6 @@ install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
 
+install(DIRECTORY rviz/
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/../mir_navigation/share/mir_navigation/rviz
+)
