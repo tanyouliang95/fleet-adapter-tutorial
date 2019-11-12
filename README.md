@@ -1,7 +1,7 @@
-# Bridging
-`git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b 01-Bridging`
+# Fleet Manager
+`git clone --recursive git@github.com:cnboonhan94/fleet-adapter-tutorial.git -b 01-fleet-manager`
 
-This chapter will focus on the fleet manager. The role of the fleet manager is to process high level commands, into low level actions that can be carried out by the robot. In some cases, certain vendors will already have written fleet managers for their systems. In our example, we build a simple one. Recall that our MiR takes in `geometry_msgs/PoseStamped` messages as nav goals. The role of our fleet manager is to manage the delivery, modification and cancellation of such commands, especially in the case of multiple message submissions. In particular, the fleet manager will also expose an interface to ROS2 via bridging in order to communicate with the fleet adapters.
+This chapter will focus on the fleet manager. The role of the fleet manager is to process high level commands, into low level actions that can be carried out by the robot. In some cases, certain vendors will already have written fleet managers for their systems. In our example, this is not the case, so we build a simple one. Recall that our MiR takes in `geometry_msgs/PoseStamped` messages as nav goals. The role of our fleet manager is to manage the delivery, modification and cancellation of such commands, especially in the case of multiple message submissions. In particular, the fleet manager will also expose an interface to ROS2 via bridging in order to communicate with the fleet adapters.
 
 ## Building the Fleet Manager
 <!-- 
