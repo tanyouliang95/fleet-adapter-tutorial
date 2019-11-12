@@ -20,7 +20,7 @@ The following steps may be necessary until `traffic-editor` is more developed.
 * `external/build/src/traffic-editor/traffic-editor`. Run the executable from the root folder
 * Select file -> Open Project, and select `maze.yaml` from `maps/maze-new` or `maps/maze-complete`.
 
-**Important** to note that the executable should be run from `traffic-editor` source folder, and the path specified in `maze.yaml` must point correctly to `maze.png` relative to the `traffic-editor` source folder.
+**Important** to note that the executable should be run from root folder, and the path specified in `maze.yaml` must point correctly to `maze.png` relative to the root folder. Alternatively, you can run the executable from `traffic-editor` root folder, and this will allow more features, but the paths specified in `maze.yaml` must then also be changed.
 
 ## Introduction
 The `traffic-editor`is a top-down editor that allows the annotation of maps. There are two functions of the editor. The first function is to specify the "traffic lanes", which are shared amongst all fleets operating in this area. The second function is to allow the automatic generation of a gazebo world by transforming annotations into their corresponding (3D) gazebo counterparts. This is useful when we do not have a gazebo world of the are, but we have a 2D planar map.
