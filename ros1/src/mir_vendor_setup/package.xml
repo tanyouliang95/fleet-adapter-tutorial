@@ -52,6 +52,9 @@
   <build_depend>mir_gazebo</build_depend>
   <build_export_depend>mir_gazebo</build_export_depend>
   <exec_depend>mir_gazebo</exec_depend>
+  <build_depend>mir_navigation</build_depend>
+  <build_export_depend>mir_navigation</build_export_depend>
+  <exec_depend>mir_navigation</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
