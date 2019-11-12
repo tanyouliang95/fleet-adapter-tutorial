@@ -1,3 +1,9 @@
 [submodule "ros1/src/mir_robot"]
 	path = ros1/src/mir_robot
 	url = https://github.com/dfki-ric/mir_robot.git
+[submodule "ros2/src/soss"]
+	path = ros2/src/soss
+	url = ssh://git@github.com/osrf/soss_v2
+[submodule "ros1/src/soss-ros1"]
+	path = ros1/src/soss-ros1
+	url = ssh://git@github.com/osrf/soss-ros1
