@@ -6,6 +6,7 @@ This chapter will focus on the fleet manager. The role of the fleet manager is t
 ## Building the Fleet Manager
 * `cd ros1`
 * `colcon build`
+* `source install/setup.bash`
 
 ## Running the Fleet Manager
 `roslaunch mir_fleet_manager fleet_manager.launch`
