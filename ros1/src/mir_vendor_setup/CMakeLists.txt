@@ -9,6 +9,7 @@ project(mir_vendor_setup)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   mir_gazebo
+  mir_navigation
   roslaunch
 )
 
